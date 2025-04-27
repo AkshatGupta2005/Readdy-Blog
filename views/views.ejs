@@ -1,0 +1,96 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/navbar.ejs') %>
+<div class="chatbotIconDiv">
+  <a href="/chatbot"><div class="chatbotIcon"></div></a>
+</div>
+<div class="infoContainer">
+  <div class="infoDiv">
+    <div class="div1">
+      <div class="bookImageDiv">
+        <img
+          src="<%= data.volumeInfo.imageLinks.thumbnail %>"
+          alt="Book ThumbNail"
+          class="bookImage"
+        />
+      </div>
+      <div class="detailsContainer">
+        <div class="viewTitle bookName poiret-one-regular">
+          <%= data.volumeInfo.title %>
+        </div>
+        <div class="viewAuthor authorName poiret-one-regular">
+          <%= data.volumeInfo.authors %>
+        </div>
+        <div class="viewDate categories poiret-one-regular">
+          Published On - <%= data.volumeInfo.publishedDate %>
+        </div>
+        <div class="viewPublisher categories poiret-one-regular">
+          Publisher - <%= data.volumeInfo.publisher %>
+        </div>
+        <div class="viewPage categories poiret-one-regular">
+          Total Pages - <%= data.volumeInfo.pageCount %>
+        </div>
+      </div>
+    </div>
+    <div class="div2">
+      <div class="viewsOption">
+        <a
+          href="<%= data.saleInfo.buyLink %>"
+          class="noUnderline optionBtn"
+          target="_blank"
+          ><div class="read poiret-one-regular">Buy</div></a
+        >
+        <div class="optionBtn addWishlist poiret-one-regular" onclick="addWishlist('<%- data.id %>')" id="<%- "wishlist" + data.id %>">
+          Add to Wishlist
+        </div>
+        <div class="optionBtn blog poiret-one-regular">Write Blog</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="descriptionContainer">
+  <div class="descriptionDiv">
+    <div class="title bookName poiret-one-regular">Description</div>
+    <div class="description poiret-one-regular">
+      <%- data.volumeInfo.description %>
+    </div>
+  </div>
+</div>
+<script>
+  const addWishlist = async (id) => {
+    const response = await fetch("/wishlist", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    });
+    const data = await response.json();
+    switch (data) {
+      case "removed":
+        document.getElementById("wishlist" + id).innerHTML = "Add to Wishlist";
+        break;
+      case "inserted":
+        document.getElementById("wishlist" + id).innerHTML = "Remove From Wishlist";
+        break;  
+      default:
+        break;
+    }
+  };
+  const checkWishlist = async () => {
+    const response = await fetch("/checkWishlist", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    data.forEach(book => {
+      const bookid = book.bookid;
+      const wishlist = document.getElementById("wishlist" + bookid);
+      if (wishlist) {
+        wishlist.innerHTML = "Remove from Wishlist";
+      }
+    });
+  }
+  window.addEventListener("load", checkWishlist);
+</script>
+<%- include('./partials/footer.ejs') %>

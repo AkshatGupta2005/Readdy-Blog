@@ -1,0 +1,62 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/navbar.ejs') %>
+<div class="chatbotIconDiv">
+  <a href="/chatbot"><div class="chatbotIcon"></div></a>
+</div>
+<div class="writeContainer">
+  <div class="infoContainer">
+    <div class="infoDiv">
+      <div class="div1 writeBlogBookBox">
+        <div class="bookImageDiv">
+          <img
+            src="<%= data.volumeInfo.imageLinks.thumbnail %>"
+            alt="Book ThumbNail"
+            class="bookImage"
+          />
+        </div>
+        <div class="detailsContainer">
+          <div class="viewTitle bookName poiret-one-regular">
+            <%= data.volumeInfo.title %>
+          </div>
+          <div class="viewAuthor authorName poiret-one-regular">
+            <%= data.volumeInfo.authors %>
+          </div>
+          <div class="viewDate categories poiret-one-regular">
+            Published On - <%= data.volumeInfo.publishedDate %>
+          </div>
+          <div class="viewPublisher categories poiret-one-regular">
+            Publisher - <%= data.volumeInfo.publisher %>
+          </div>
+          <div class="viewPage categories poiret-one-regular">
+            Total Pages - <%= data.volumeInfo.pageCount %>
+          </div>
+        </div>
+      </div>
+      <div class="div2 writeBlogDescriptionBox">
+        <div class="writeBlogDescriptionContainer">
+          <div class="descriptionDiv">
+            <div class="title bookName poiret-one-regular">Description</div>
+            <div class="description poiret-one-regular">
+              <%- data.volumeInfo.description %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form action="/postBlog/<%= data.id %>" class="writeDiv" method="post">
+    <textarea
+      class="textArea poiret-one-regular"
+      cols="200"
+      rows="10"
+      autofocus
+      placeholder="Blog Something"
+      name="post"
+    ></textarea>
+    <label class=""
+      >Private Blog
+      <input type="checkbox" class="privateBtn" name="pri"/>
+    </label>
+    <input type="submit" class="optionBtn subBtn" />
+  </form>
+</div>
+<%- include('./partials/footer.ejs') %>

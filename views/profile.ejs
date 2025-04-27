@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs') %>
+<div class="navbarContainter">
+  <div class="navbar">
+    <div class="logoBox">
+      <div class="logoImg"></div>
+      <div class="logoTitle">Readdy Blog</div>
+    </div>
+    <div class="searchBox">
+      <form action="/search" class="searchForm" method="post">
+        <input type="text" name="query" class="searchBar" placeholder="Search Books/ Authors">
+        <input type="submit" class="submitBtn" value="">
+      </form>
+    </div>
+    <div class="navBarOption">
+      <form action="/">
+        <input type="submit" class="loginBtn" value="Home" />
+      </form>
+    </div>
+  </div>
+</div>
+<div class="profile">
+  <div class="profileCard">
+    <div class="profileDiv">
+      <div class="profileName">Hola, <span class="dosis"><%= userName %></span></div>
+      <div class="profileDetailsDiv">
+        <div class="dosis titleBlog">Total Blogs</div>
+        <div class="profileDetails dosis">
+          <div class="total">Total : <%= allBlog %></div>
+          <div class="total">Public : <%= publicBlog %></div>
+          <div class="total">Private : <%= privateBlog %></div>
+        </div>
+      </div>
+      <hr/>
+      <div class="profileOptions">
+        <div class="updateProfile">
+          <form action="/updateProfile">
+            <input type="submit" class="updateProfileBtn dosis optionBtn" value="Update Profile"/>
+          </form>
+        </div>
+        <div class="logout">
+          <form action="/logout">
+            <input type="submit" class="dosis optionBtn logoutBtn" value="Log Out"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer.ejs') %>

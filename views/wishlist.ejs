@@ -1,0 +1,50 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/navbar.ejs') %>
+<div class="chatbotIconDiv">
+  <a href="/chatbot"><div class="chatbotIcon"></div></a>
+</div>
+<div class="booksContainer">
+  <div class="booksDiv">
+    <% data.forEach(book => { %>
+    <a href="/view/<%= book.id %>" class="noUnderline bookCardA">
+      <div class="bookCard">
+        <div class="thumbnail">
+          <% try { %>
+          <img
+            src="<%= book.image %>"
+            alt="ThumbNail"
+            class="thumbnailImage"
+          />
+          <% } catch (error) { %>
+          <img src="" alt="Error Loading Image" />
+          <% } %>
+        </div>
+        <div class="bookInfo">
+          <div class="bookInfoDiv">
+            <div class="bookName poiret-one-regular">
+              <%= book.title %>
+            </div>
+            <div class="authorName poiret-one-regular">
+              <%= book.authors %>
+            </div>
+          </div>
+          <div class="options">
+            <div class="knowMore">
+              <form
+                action="/writeBlog/<%= book.id %>/<%=book.title%>"
+                method="POST"
+              >
+                <input
+                  type="submit"
+                  class="knowMoreBtn poiret-one-regular"
+                  value="Write Blog"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <% }); %>
+  </div>
+</div>
+<%- include('./partials/footer.ejs') %>

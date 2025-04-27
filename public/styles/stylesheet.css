@@ -1,0 +1,610 @@
+@font-face {
+  font-family: brenttleySignature;
+  src: url("../fonts/BrettleySignatureRegular-RpEMo.ttf");
+}
+@font-face {
+  font-family: brotherSignature;
+  src: url("../fonts/BrotherSignature-7BWnK.otf");
+}
+.dosis {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.poiret-one-regular {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.creamColor {
+  color: #faf7f0;
+}
+.green {
+  color: #6d9886;
+}
+.noUnderline {
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  background-color: #f6f6f6;
+  padding-top: 4em;
+}
+.navbarContainter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+.navbar {
+  width: 85%;
+  height: 3.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #212121;
+  padding: 0 1em 0 1em;
+  border-radius: 0 0 15px 15px;
+}
+.logoBox {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.logoTitle {
+  font-size: 2.2em;
+  color: #d9cab3;
+  font-family: "brotherSignature", cursive;
+  font-stretch: expanded;
+}
+.navBarOption {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.searchBox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.searchBar {
+  height: 100%;
+  width: 80%;
+  flex: 1;
+  background-color: #f6f6f6;
+  border-radius: 25px 0 0 25px;
+  padding-left: 0.8em;
+  font-size: 0.8em;
+  color: #4a4947;
+}
+.submitBtn {
+  background: url(../icons/search_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg)
+    no-repeat center;
+  height: 100%;
+  width: 2.5em;
+  background-color: #6d9886;
+  border-radius: 0 50% 50% 0;
+  padding-left: 0.5em;
+}
+.loginBtn {
+  background-color: #6d9886;
+  height: 2.6em;
+  width: 6em;
+  text-align: center;
+  border-radius: 30px;
+  color: #f6f6f6;
+}
+.loginContainer {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginDiv {
+  height: 80%;
+  min-width: 25em;
+  background-color: #212121;
+  border-radius: 0.8em;
+}
+.loginCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+.loginForm {
+  margin-top: 1em;
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.loginElement {
+  height: 3em;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0 0.6em 0 0.6em;
+  font-size: 1em;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+.loginLogo {
+  font-size: 3.5em;
+  margin: 0;
+}
+.loginText {
+  text-align: center;
+}
+.loginCard > * {
+}
+.loginText {
+  font-size: 2em;
+}
+.passwordFeild {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.passBox {
+  width: 100%;
+}
+.loginSbm {
+  width: 50%;
+  padding: 0;
+  font-size: 1.1em;
+  color: #f6f6f6;
+  background-color: #6d9886;
+  margin-top: 1.1em;
+}
+.errorBox {
+  height: 0.8em;
+  color: #c62e2e;
+}
+.searchForm {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+  height: 60%;
+  width: 80%;
+  align-items: center;
+}
+#toggler {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+footer {
+  margin-top: 2em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer div {
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+}
+.profile {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+.profileCard {
+  width: 80%;
+  border-radius: 30px;
+  border: 2px solid #4a4947;
+  padding: 1em;
+  text-align: center;
+}
+.profileDetails {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.3em;
+}
+.profileDetailsDiv {
+  margin-bottom: 1em;
+}
+.titleBlog {
+  font-size: 1.5em;
+  margin-bottom: 0.6em;
+}
+.profileDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.profileOptions {
+  display: flex;
+  justify-content: space-evenly;
+}
+.profileName {
+  font-family: brenttleySignature;
+  font-size: 2.3em;
+  margin-bottom: 0.6em;
+}
+.optionBtn {
+  font-size: 1.3em;
+  padding: 0.4em 1em;
+  border-radius: 25px;
+  color: #f6f6f6;
+  background-color: #6d9886;
+  width: 100%;
+  text-align: center;
+}
+.updateProfileBtn {
+  background-color: #6d9886;
+}
+.logoutBtn {
+  background-color: #c62e2e;
+}
+hr {
+  border: 1px solid #e4e0e1;
+  width: 60%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+.chatBox {
+  display: flex;
+  justify-content: center;
+}
+.chatBoxDiv {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+}
+.chatArea {
+  width: 100%;
+  margin-bottom: 4em;
+}
+.reply {
+  display: block;
+  position: relative;
+  left: 0;
+  text-align: left;
+  font-family: "Dosis", sans-serif;
+}
+.query {
+  display: flex;
+  justify-content: end;
+  text-align: right;
+  font-family: "Dosis", sans-serif;
+  margin: 0.5em 0 0.5em 0;
+}
+.queryBox{
+  width: fit-content;
+  border: 1px solid #4a4947;
+  font-size: 1.6em;
+  border-radius: 15px;
+  padding: 0.3em 1em 0.3em 1em;
+}
+.chat {
+  width: 55%;
+  height: 75%;
+  border-radius: 25px 0 0 25px;
+  padding-left: 1em;
+  font-size: 1em;
+  font-family: "Dosis", sans-serif;
+}
+.chatQuery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+  background-color: #212121;
+  border-radius: 25px 25px 0 0;
+  gap: 5px;
+}
+.chatBar {
+  position: fixed;
+  bottom: 0;
+  height: 3.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.send {
+  background: url(../icons/send_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg)
+    no-repeat center;
+  height: 75%;
+  width: 3%;
+  background-color: #6d9886;
+  border-radius: 0 50% 50% 0;
+  padding-left: 2em;
+}
+.chatbotIconDiv{
+  position: fixed;
+  width: fit-content;
+  bottom: 1em;
+  right: 1em;
+}
+.chatbotIcon{
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #6d9886;
+  background-image: url(../icons/chat_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.booksContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.booksDiv{
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  gap: 0.5em;
+}
+.bookCardA{
+  height: auto;
+}
+.bookCard{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 96%;
+  border: 1px solid #4a4947;
+  border-radius: 25px;
+  padding: 0.4em;
+  gap: 10px;
+  color: #212121;
+}
+.bookInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%;
+}
+.thumbnailImage{
+  width: auto;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid #6d9886;  
+  margin: 0 0.5em 0 0.5em;
+}
+.thumbnail{
+  width: fit-content;
+  height: 12em;
+}
+.bookName{
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.authorName{
+  font-size: 1.1em;
+  font-weight: 650;
+}
+.categories{
+  font-size: 1em;
+  font-weight: 600;
+}
+.options{
+  display: flex;
+  align-self: flex-end; 
+  justify-content: center;
+  align-items: center;
+}
+.knowMoreBtn{
+  margin-left: 0.5em;
+  width: 7em;
+  height: 1.7em;
+  font-size: 1.2em;
+  color: #f6f6f6;
+  background-color: #6d9886;
+  border-radius: 30px;
+}
+.wishlist{
+  width: auto;
+  height: 100%;
+  mix-blend-mode: multiply;
+}
+.wishlistDiv{
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.infoContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.infoDiv{
+  width: 85%;
+  border: 1px solid #212121;
+  border-radius: 25px;
+  display: flex;
+  padding: 0.5em;
+  height: fit-content;
+  justify-content: space-between;
+}
+.div1{
+  display: flex;
+  flex-wrap: wrap;
+}
+.div2{
+}
+.bookImageDiv{
+  width: fit-content;
+  height: 15em;
+}
+.bookImage{
+  border-radius: 20px;
+  margin-right: 0.5em;
+  height: 100%;
+  width: auto;
+}
+.viewsOption{
+  margin-left: auto;
+  margin-right: 2em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.detailsContainer{
+  margin-top: 0.2em;
+}
+.noUnderline{
+  text-decoration: none;
+}
+.descriptionContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.descriptionDiv{
+  width: 84%;
+  border: 1px solid #212121;
+  border-radius: 25px;
+  padding: 0.8em;
+}
+.description{
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+.writeContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.writeDiv{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.book{
+  border: 1px solid #212121;
+  border-radius: 15px;
+  font-size: 2em;
+  width: fit-content;
+  padding: 0.2em;
+  background-color: #F2F2F2;
+}
+.textArea{
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 15px;
+  background-color:#EEEEEE;
+  border: 1px solid #212121;
+  padding: 0.5em;
+}
+.subBtn{
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 0.2em 1em;
+}
+.writeBlogDescriptionBox{
+  flex-basis: auto;
+}
+.writeBlogBookBox{
+  flex-basis: auto;
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 1023px) {
+  .searchBox {
+    order: 1;
+    grid-column-start: -3;
+    grid-column-end: -1;
+  }
+  .navbar {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: fit-content;
+  }
+  body{
+    padding-top: 8em;
+  }
+  .booksDiv{
+    grid-template-columns: 1fr 1fr;
+  }
+  .infoDiv{
+    flex-direction: column;
+  }
+  .viewsOption{
+    flex-direction: row;
+    margin-top: 0.5em;
+    margin-right: 0;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .optionBtn{
+    min-width: 6em;
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 700px){
+  .booksDiv{
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 420px) and (min-width: 360px) {
+  .loginDiv {
+    min-width: 22em;
+    height: 90%;
+  }
+  .loginContainer {
+    height: 98vh;
+  }
+}
+@media screen and (max-width: 375px) {
+  .loginDiv {
+    min-width: 18em;
+    height: 95%;
+  }
+  .loginContainer {
+    height: 99vh;
+  }
+  .loginElement {
+    height: 2.5em;
+    font-size: 0.8em;
+  }
+  .logoTitle {
+    font-size: 1.9em;
+  }
+  .optionBtn {
+    padding: 0.3em 0.5em;
+  }
+}

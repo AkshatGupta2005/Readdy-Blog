@@ -1,0 +1,106 @@
+<%- include('./partials/header.ejs') %>
+<div class="loginContainer">
+  <div class="loginDiv">
+    <div class="loginCard">
+      <% if (locals.userLogin) { %>
+      <div class="logoTitle loginLogo">Readdy Blog</div>
+      <div class="loginText dosis creamColor">
+        <div>Welcome</div>
+        <div>Already a User ?</div>
+      </div>
+      <form action="/logUser" class="loginForm" method="post">
+        <div class="dosis creamColor loginText">Log in</div>
+        <input
+          type="email"
+          name="email"
+          class="emailBox loginElement dosis"
+          placeholder="Your Email"
+          required
+        />
+        <div class="passwordFeild">
+          <input
+            type="password"
+            name="pass"
+            id="password"
+            class="passBox loginElement dosis"
+            placeholder="Enter Password"
+            required
+          />
+          <span><i id="toggler" class="far fa-eye"></i></span>
+        </div>
+        <div class="errorBox">
+          <% if (locals.err) { %>
+            <div><%= err %></div>
+          <% } %>
+        </div>
+        <input
+          type="submit"
+          class="loginSbm loginElement dosis"
+          value="Login"
+        />
+        <div class="dosis creamColor">
+          New User?
+          <a href="/login" class="green noUnderline">Sign Up</a>
+        </div>
+      </form>
+      <% } else { %>
+      <div class="logoTitle loginLogo">Readdy Blog</div>
+      <div class="loginText dosis creamColor">
+        <div>Welcome</div>
+        <div>First Time User ?</div>
+      </div>
+      <form action="/register" class="loginForm" method="post">
+        <div class="dosis creamColor loginText">Sign Up</div>
+        <input
+          type="text"
+          name="name"
+          class="nameBox loginElement dosis"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="text"
+          name="username"
+          class="usernameBox loginElement dosis"
+          placeholder="Your Username"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          class="emailBox loginElement dosis"
+          placeholder="Your Email"
+          required
+        />
+        <div class="passwordFeild">
+          <input
+            type="password"
+            name="pass"
+            id="password"
+            class="passBox loginElement dosis"
+            placeholder="Enter Password"
+            required
+          />
+          <span><i id="toggler" class="far fa-eye"></i></span>
+        </div>
+        <div class="errorBox">
+          <% if (locals.err) { %>
+            <div><%= err %></div>
+          <% } %>
+        </div>
+        <input
+          type="submit"
+          class="loginSbm loginElement dosis"
+          value="Sign Up"
+        />
+        <div class="dosis creamColor">
+          Already a User?
+          <a href="/userLogin" class="green noUnderline">Log in</a>
+        </div>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</div>
+<script src="./js/login.js"></script>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,24 @@
+<div class="navbarContainter">
+<div class="navbar">
+    <div class="logoBox">
+        <a href="/" class="noUnderline"><div class="logoTitle">Readdy Blog</div></a>
+    </div>
+    <div class="searchBox">
+        <form action="/search" class="searchForm" method="post">
+            <input type="text" name="query" class="searchBar" placeholder="Search Books/ Authors" required>
+            <input type="submit" class="submitBtn" value="">
+        </form>
+    </div>
+    <div class="navBarOption">
+        <% if (locals.userid) { %>
+            <form action="/profile">
+                <input type="submit" class="loginBtn" value="Profile">
+            </form>
+        <% } else { %>
+            <form action="/login">
+                <input type="submit" class="loginBtn" value="Login">
+            </form>
+        <% } %> 
+    </div>
+</div>
+</div>
